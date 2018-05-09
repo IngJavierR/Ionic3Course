@@ -1,5 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule,
+          MatButtonModule,
+          MatListModule,
+          MatIconModule,
+          MatInputModule,
+          MatProgressBarModule } from '@angular/material';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -10,6 +17,15 @@ import { GamePage } from '../pages/game/game';
 import { TeamDetailPage } from '../pages/team-detail/team-detail';
 import { TeamsPage } from '../pages/teams/teams';
 import { TournamentsPage } from '../pages/tournaments/tournaments';
+
+export const MATERIAL_COMPONENTS = [
+  MatFormFieldModule,
+  MatButtonModule,
+  MatListModule,
+  MatIconModule,
+  MatInputModule,
+  MatProgressBarModule
+]
 
 @NgModule({
   declarations: [
@@ -22,6 +38,8 @@ import { TournamentsPage } from '../pages/tournaments/tournaments';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MATERIAL_COMPONENTS,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
