@@ -1,22 +1,18 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Tournaments</ion-title>
   </ion-navbar>
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </ion-header>
 
 
-<ion-content padding>
-<button ion-button (click)="goBack()">Go Back</button>
-<button mat-fab color="primary">Primary</button>
-<form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
+<ion-content>
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form>
+  <ion-list>
+    <button *ngFor="let item of tournaments" ion-item (click)="itemTapped($event, item)">
+      {{item.name}}
+    </button>
+  </ion-list>
+
 </ion-content>

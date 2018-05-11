@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
+import { HttpClientModule } from "@angular/common/http";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule,
           MatButtonModule,
@@ -17,6 +18,9 @@ import { GamePage } from '../pages/game/game';
 import { TeamDetailPage } from '../pages/team-detail/team-detail';
 import { TeamsPage } from '../pages/teams/teams';
 import { TournamentsPage } from '../pages/tournaments/tournaments';
+import { StandingsPage } from '../pages/standings/standings';
+import { TeamHomePage } from '../pages/team-home/team-home';
+import { ElipeApiProvider } from '../providers/elipe-api/elipe-api';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -34,11 +38,14 @@ export const MATERIAL_COMPONENTS = [
     GamePage,
     TeamDetailPage,
     TeamsPage,
-    TournamentsPage
+    TournamentsPage,
+    StandingsPage,
+    TeamHomePage
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MATERIAL_COMPONENTS,
     IonicModule.forRoot(MyApp)
   ],
@@ -49,12 +56,15 @@ export const MATERIAL_COMPONENTS = [
     GamePage,
     TeamDetailPage,
     TeamsPage,
-    TournamentsPage
+    TournamentsPage,
+    StandingsPage,
+    TeamHomePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ElipeApiProvider
   ]
 })
 export class AppModule {}
