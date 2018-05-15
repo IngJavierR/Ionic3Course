@@ -7,9 +7,33 @@
 
 <ion-content padding>
 
+  <ion-card>
+    <ion-card-content>
+      <ion-row>
+        <ion-col></ion-col>
+      </ion-row>
+      <ion-item>
+        <ion-label>label</ion-label>
+        <ion-datetime displayFormat="M/D/YYYY" pickerFormat="M/D/YYYY" [(ngModel)]="dateFilter"></ion-datetime>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
   <ion-list>
     <ion-item *ngFor="let game of games" (click)="gameClicked($event, game)">
-      {{game.opponent}}
+      <ion-row>
+        <ion-col>
+          <p>{{game.time | date: 'M/d/yy'}}</p>
+          <p>{{game.time | date: 'shortTime'}}</p>
+        </ion-col>
+        <ion-col> 
+            <p>{{game.homeAway}} {{game.opponent}}</p>
+            <p>{{game.location}}</p>
+        </ion-col>
+        <ion-col>
+          <p>{{game.scoreDisplay}}</p>
+        </ion-col>
+      </ion-row>
     </ion-item>
   </ion-list>
   <!--<h2>Team Detail</h2>

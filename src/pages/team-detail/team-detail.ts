@@ -9,6 +9,7 @@ import { GamePage } from '../game/game';
 })
 export class TeamDetailPage {
 
+  public dateFilter: string;
   public data: any = {};
   public games: any[];
   constructor(public navCtrl: NavController, 

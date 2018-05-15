@@ -9,6 +9,7 @@ import { MatFormFieldModule,
           MatInputModule,
           MatProgressBarModule } from '@angular/material';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from "@ionic/storage";
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -20,7 +21,10 @@ import { TeamsPage } from '../pages/teams/teams';
 import { TournamentsPage } from '../pages/tournaments/tournaments';
 import { StandingsPage } from '../pages/standings/standings';
 import { TeamHomePage } from '../pages/team-home/team-home';
+import { SaveInStoragePage } from "../pages/save-in-storage/save-in-storage";
+
 import { ElipeApiProvider } from '../providers/elipe-api/elipe-api';
+import { UserSettingsProvider } from '../providers/user-settings/user-settings';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -40,13 +44,15 @@ export const MATERIAL_COMPONENTS = [
     TeamsPage,
     TournamentsPage,
     StandingsPage,
-    TeamHomePage
+    TeamHomePage,
+    SaveInStoragePage
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
     MATERIAL_COMPONENTS,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -58,13 +64,15 @@ export const MATERIAL_COMPONENTS = [
     TeamsPage,
     TournamentsPage,
     StandingsPage,
-    TeamHomePage
+    TeamHomePage,
+    SaveInStoragePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    ElipeApiProvider
+    ElipeApiProvider,
+    UserSettingsProvider
   ]
 })
 export class AppModule {}

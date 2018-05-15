@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SaveInStorage</ion-title>
+  </ion-navbar>
+
+  <ion-toolbar>
+    <ion-searchbar placeholder="Search" [(ngModel)]="queryText" (ionInput)="updateTeams()"></ion-searchbar>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-refresher (ionRefresh)="refreshAll($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+</ion-content>
