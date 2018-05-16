@@ -12,6 +12,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from "@ionic/storage";
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { AgmCoreModule } from "@agm/core";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -25,6 +26,7 @@ import { SaveInStoragePage } from "../pages/save-in-storage/save-in-storage";
 
 import { ElipeApiProvider } from '../providers/elipe-api/elipe-api';
 import { UserSettingsProvider } from '../providers/user-settings/user-settings';
+import { MapPage } from '../pages/map/map';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -45,7 +47,8 @@ export const MATERIAL_COMPONENTS = [
     TournamentsPage,
     StandingsPage,
     TeamHomePage,
-    SaveInStoragePage
+    SaveInStoragePage,
+    MapPage
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ export const MATERIAL_COMPONENTS = [
     HttpClientModule,
     MATERIAL_COMPONENTS,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyCzQpA3BWcHgYz3-1bBmPF3y8K6CdeIWYw'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -65,7 +69,8 @@ export const MATERIAL_COMPONENTS = [
     TournamentsPage,
     StandingsPage,
     TeamHomePage,
-    SaveInStoragePage
+    SaveInStoragePage,
+    MapPage
   ],
   providers: [
     StatusBar,
