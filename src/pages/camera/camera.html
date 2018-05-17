@@ -1,0 +1,22 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Camera</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button full (click)="takePicture()">Take Picture</button>
+
+  <ion-card *ngIf="imgSrc">
+    <ion-card-header>
+      Picture
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="imgSrc"/>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

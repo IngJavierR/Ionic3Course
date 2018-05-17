@@ -12,6 +12,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { IonicStorageModule } from "@ionic/storage";
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { Vibration } from "@ionic-native/vibration";
+import { Geolocation } from "@ionic-native/geolocation";
+import { Camera } from "@ionic-native/camera";
+import { DeviceMotion } from "@ionic-native/device-motion";
+import { LocalNotifications } from "@ionic-native/local-notifications";
+import { SQLite } from "@ionic-native/sqlite";
 import { AgmCoreModule } from "@agm/core";
 
 import { MyApp } from './app.component';
@@ -27,6 +33,15 @@ import { SaveInStoragePage } from "../pages/save-in-storage/save-in-storage";
 import { ElipeApiProvider } from '../providers/elipe-api/elipe-api';
 import { UserSettingsProvider } from '../providers/user-settings/user-settings';
 import { MapPage } from '../pages/map/map';
+import { VibrationPage } from '../pages/vibration/vibration';
+import { GeolocationPage } from '../pages/geolocation/geolocation';
+import { CameraPage } from '../pages/camera/camera';
+import { BarcodeScanner } from "@ionic-native/barcode-scanner";
+import { BarcodeScannerPage } from '../pages/barcode-scanner/barcode-scanner';
+import { DeviceMotionPage } from '../pages/device-motion/device-motion';
+import { LocalNotificationPage } from '../pages/local-notification/local-notification';
+import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
+import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -48,7 +63,14 @@ export const MATERIAL_COMPONENTS = [
     StandingsPage,
     TeamHomePage,
     SaveInStoragePage,
-    MapPage
+    MapPage,
+    VibrationPage,
+    GeolocationPage,
+    CameraPage,
+    BarcodeScannerPage,
+    DeviceMotionPage,
+    LocalNotificationPage,
+    ManageSqlPage
   ],
   imports: [
     BrowserModule,
@@ -70,14 +92,29 @@ export const MATERIAL_COMPONENTS = [
     StandingsPage,
     TeamHomePage,
     SaveInStoragePage,
-    MapPage
+    MapPage,
+    VibrationPage,
+    GeolocationPage,
+    CameraPage,
+    BarcodeScannerPage,
+    DeviceMotionPage,
+    LocalNotificationPage,
+    ManageSqlPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ElipeApiProvider,
-    UserSettingsProvider
+    UserSettingsProvider,
+    Vibration,
+    Geolocation,
+    Camera,
+    BarcodeScanner,
+    DeviceMotion,
+    LocalNotifications,
+    SQLite,
+    SqlStorageProvider
   ]
 })
 export class AppModule {}

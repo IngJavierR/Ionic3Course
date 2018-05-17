@@ -1,0 +1,19 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Geolocation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button full (click)="getGeolocation()">Get Geolocation</button>
+
+  <div>
+    <h3>Latitude: {{location.lat}}</h3>
+    <h3>Longidute: {{location.lng}}</h3>
+  </div>
+
+</ion-content>

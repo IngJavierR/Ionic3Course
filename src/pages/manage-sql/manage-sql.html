@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ManageSql</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-item>
+        <ion-label floating>Id</ion-label>
+        <ion-input type="number" [(ngModel)]="id"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="name"></ion-input>
+      </ion-item>
+
+      <button ion-button full (click)="save()">Save</button>
+
+      <button ion-button full (click)="show()">Show people</button>
+
+      <ion-card>
+        <ion-card-header>
+          People
+        </ion-card-header>
+        <ion-card-content>
+          <ion-list >
+            <ion-item *ngFor="let person of persons" (click)="delete(person)">
+                {{person.id}} - {{person.name}}
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+</ion-content>

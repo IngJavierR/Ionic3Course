@@ -24,12 +24,33 @@
     "@angular/material": "^5.2.4",
     "@angular/platform-browser": "5.2.10",
     "@angular/platform-browser-dynamic": "5.2.10",
+    "@ionic-native/barcode-scanner": "^4.7.0",
+    "@ionic-native/camera": "^4.7.0",
     "@ionic-native/core": "4.7.0",
+    "@ionic-native/device-motion": "^4.7.0",
+    "@ionic-native/geolocation": "^4.7.0",
+    "@ionic-native/local-notifications": "^4.7.0",
     "@ionic-native/splash-screen": "4.7.0",
+    "@ionic-native/sqlite": "^4.7.0",
     "@ionic-native/status-bar": "4.7.0",
+    "@ionic-native/vibration": "^4.7.0",
     "@ionic/storage": "2.1.3",
+    "cordova-android": "6.4.0",
+    "cordova-plugin-badge": "^0.8.7",
+    "cordova-plugin-camera": "^4.0.3",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-device-motion": "^2.0.1",
+    "cordova-plugin-geolocation": "^4.0.1",
+    "cordova-plugin-ionic-keyboard": "^2.0.5",
+    "cordova-plugin-ionic-webview": "^1.2.1",
+    "cordova-plugin-local-notification": "^0.9.0-beta.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-vibration": "^3.1.0",
+    "cordova-plugin-whitelist": "^1.3.3",
+    "cordova-sqlite-storage": "^2.3.1",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "phonegap-plugin-barcodescanner": "^7.1.2",
     "rxjs": "5.5.10",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.26"
@@ -41,5 +62,28 @@
   "description": "An Ionic project",
   "config": {
     "ionic_copy": "./config/copy.config.js"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {},
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-vibration": {},
+      "cordova-plugin-geolocation": {
+        "GEOLOCATION_USAGE_DESCRIPTION": "To locate you"
+      },
+      "cordova-plugin-camera": {},
+      "phonegap-plugin-barcodescanner": {
+        "ANDROID_SUPPORT_V4_VERSION": "27.+"
+      },
+      "cordova-plugin-device-motion": {},
+      "cordova-plugin-local-notification": {},
+      "cordova-sqlite-storage": {}
+    },
+    "platforms": [
+      "android"
+    ]
   }
 }

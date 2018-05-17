@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DeviceMotion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  
+  <button ion-button full (click)="startWatching()">Start Watching</button>
+  <button ion-button full (click)="stopWatching()">Stop Watching</button>
+  
+  <ion-card *ngIf="data">
+    <ion-card-header>
+      Accelerometer
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        <h3>x: {{data.x | number:'1.4-4'}}</h3>
+        <h3>y: {{data.y | number:'1.4-4'}}</h3>
+        <h3>x: {{data.z | number:'1.4-4'}}</h3>
+        <h3></h3>
+        <h3></h3>
+      </div>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

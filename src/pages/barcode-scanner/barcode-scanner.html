@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>BarcodeScanner</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <button ion-button full primary (click)="scan()">Scan</button>
+  <button ion-button full secondary (click)="reset()">Reset</button>
+
+  <div *ngIf="results">
+    <h2>Format: {{results.format}}</h2>
+    <h2>Text: {{results.text}}</h2>
+
+    <button ion-button full secondary (click)="lookup()">Lookup</button>
+  </div>
+</ion-content>
