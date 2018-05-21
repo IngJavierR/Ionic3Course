@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { NavController, NavParams, LoadingController } from 'ionic-angular';
 import { TeamsPage } from '../teams/teams';
 import { ElipeApiProvider } from "../../providers/elipe-api/elipe-api";
 
-@IonicPage()
 @Component({
   selector: 'page-tournaments',
   templateUrl: 'tournaments.html',
