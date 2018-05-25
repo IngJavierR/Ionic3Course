@@ -13,6 +13,7 @@ import { DeviceMotionPage } from '../pages/device-motion/device-motion';
 import { LocalNotificationPage } from '../pages/local-notification/local-notification';
 import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
+import { BotPage } from '../pages/bot/bot';
 @Component({
   templateUrl: 'app.html'
 })
@@ -69,6 +70,10 @@ export class MyApp {
 
   goToManageSql() {
     this.nav.push(ManageSqlPage);
+  }
+
+  goToChatBot() {
+    this.nav.push(BotPage);
   }
 }
 

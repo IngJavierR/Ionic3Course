@@ -30,6 +30,8 @@ import { StandingsPage } from '../pages/standings/standings';
 import { TeamHomePage } from '../pages/team-home/team-home';
 import { SaveInStoragePage } from "../pages/save-in-storage/save-in-storage";
 
+import { ChatBotComponent } from "../components/chat-bot/chat-bot";
+
 import { ElipeApiProvider } from '../providers/elipe-api/elipe-api';
 import { UserSettingsProvider } from '../providers/user-settings/user-settings';
 import { MapPage } from '../pages/map/map';
@@ -42,6 +44,7 @@ import { DeviceMotionPage } from '../pages/device-motion/device-motion';
 import { LocalNotificationPage } from '../pages/local-notification/local-notification';
 import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
 import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
+import { BotPage } from '../pages/bot/bot';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -70,7 +73,9 @@ export const MATERIAL_COMPONENTS = [
     BarcodeScannerPage,
     DeviceMotionPage,
     LocalNotificationPage,
-    ManageSqlPage
+    ManageSqlPage,
+    BotPage,
+    ChatBotComponent
   ],
   imports: [
     BrowserModule,
@@ -99,7 +104,8 @@ export const MATERIAL_COMPONENTS = [
     BarcodeScannerPage,
     DeviceMotionPage,
     LocalNotificationPage,
-    ManageSqlPage
+    ManageSqlPage,
+    BotPage
   ],
   providers: [
     StatusBar,

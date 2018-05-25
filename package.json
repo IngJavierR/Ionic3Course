@@ -35,6 +35,8 @@
     "@ionic-native/status-bar": "4.7.0",
     "@ionic-native/vibration": "^4.7.0",
     "@ionic/storage": "2.1.3",
+    "@types/react": "^16.3.14",
+    "botframework-webchat": "^0.13.1",
     "cordova-android": "6.4.0",
     "cordova-ios": "4.5.4",
     "cordova-plugin-badge": "^0.8.7",
