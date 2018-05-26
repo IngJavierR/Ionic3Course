@@ -14,6 +14,7 @@ import { LocalNotificationPage } from '../pages/local-notification/local-notific
 import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
 import { BotPage } from '../pages/bot/bot';
+import { SignaturePage } from '../pages/signature/signature';
 @Component({
   templateUrl: 'app.html'
 })
@@ -74,6 +75,10 @@ export class MyApp {
 
   goToChatBot() {
     this.nav.push(BotPage);
+  }
+
+  goToSign() {
+    this.nav.push(SignaturePage);
   }
 }
 

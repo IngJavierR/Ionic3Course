@@ -19,6 +19,7 @@ import { DeviceMotion } from "@ionic-native/device-motion";
 import { LocalNotifications } from "@ionic-native/local-notifications";
 import { SQLite } from "@ionic-native/sqlite";
 import { AgmCoreModule } from "@agm/core";
+import { SignaturePadModule } from 'angular2-signaturepad';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -45,6 +46,7 @@ import { LocalNotificationPage } from '../pages/local-notification/local-notific
 import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
 import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 import { BotPage } from '../pages/bot/bot';
+import { SignaturePage } from '../pages/signature/signature';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -75,13 +77,15 @@ export const MATERIAL_COMPONENTS = [
     LocalNotificationPage,
     ManageSqlPage,
     BotPage,
-    ChatBotComponent
+    ChatBotComponent,
+    SignaturePage
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MATERIAL_COMPONENTS,
+    MATERIAL_COMPONENTS, 
+    SignaturePadModule,
     IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({apiKey: 'AIzaSyCzQpA3BWcHgYz3-1bBmPF3y8K6CdeIWYw'})
@@ -105,7 +109,8 @@ export const MATERIAL_COMPONENTS = [
     DeviceMotionPage,
     LocalNotificationPage,
     ManageSqlPage,
-    BotPage
+    BotPage,
+    SignaturePage
   ],
   providers: [
     StatusBar,
