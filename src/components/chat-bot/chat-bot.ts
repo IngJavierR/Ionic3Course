@@ -1,11 +1,6 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import {App} from "botframework-webchat";
-/**
- * Generated class for the ChatBotComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
+import { App } from "botframework-webchat";
+
 @Component({
   selector: 'chat-bot',
   templateUrl: 'chat-bot.html'
@@ -25,9 +20,12 @@ export class ChatBotComponent implements OnInit{
       adaptiveCardsHostConfig: {
         fontFamily: '"Myriad Pro", sans-serif'
       },
-      directLine: {secret: 'f0U4GgfLXeQ.cwA.PbA.efbJoWeP7mQyWoW-QiZuwsJVD6MDZyw9JO1BpNAa9mY'},
-      user: {id: 'user'},
-      bot: {id: 'bot'},
+      directLine: {
+        secret: 'f0U4GgfLXeQ.cwA.PbA.efbJoWeP7mQyWoW-QiZuwsJVD6MDZyw9JO1BpNAa9mY', 
+        webSocket: true 
+      },
+      user: {id: 'userid', name: 'username'},
+      bot: {id: 'botid', name: 'botname'},
     }, this.botWindowElement.nativeElement);
   }
 
