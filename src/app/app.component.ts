@@ -15,10 +15,13 @@ import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
 import { BotPage } from '../pages/bot/bot';
 import { SignaturePage } from '../pages/signature/signature';
+declare var ADRUM : any;
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
+  vpView: any;
   @ViewChild(Nav) nav: Nav
 
   rootPage:any;
@@ -34,6 +37,26 @@ export class MyApp {
       splashScreen.hide();
 
       sqlStorage.initializeDatabase().then(() => this.rootPage = HomePage);
+    }); 
+  }
+
+  ngAfterViewInit() {
+    this.nav.viewDidEnter.subscribe((view) => {
+      console.log('NavigationStart: ', view);
+
+      this.vpView = new ADRUM.events.VPageView();
+      this.vpView.start();
+      this.vpView.markViewChangeStart();
+    });
+    this.nav.viewDidLeave.subscribe((view) => {
+      console.log('NavigationEnd: ', view);
+
+      this.vpView.markViewChangeEnd();
+      this.vpView.markViewDOMLoaded();
+      this.vpView.markXhrRequestsCompleted();
+      this.vpView.markViewResourcesLoaded();
+      this.vpView.end();
+      ADRUM.report(this.vpView);
     });
   }
 
