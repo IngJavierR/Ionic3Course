@@ -1,5 +1,5 @@
-import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { App } from "botframework-webchat";
+import { Component, ViewChild, ElementRef, OnInit, Input } from '@angular/core';
+import { App, DirectLine } from "botframework-webchat";
 //import { SpeechRecognizer, SpeechSynthesizer } from "botframework-webchat/CognitiveServices";
 
 @Component({
@@ -8,6 +8,7 @@ import { App } from "botframework-webchat";
 })
 export class ChatBotComponent implements OnInit{
 
+  @Input("bot-key") botKey: string;
   @ViewChild("botWindow") botWindowElement: ElementRef;
   text: string;
 
@@ -24,18 +25,30 @@ export class ChatBotComponent implements OnInit{
           voiceName: 'Microsoft Server Speech Text to Speech Voice (es-MX, HildaRUS)',
       })
     };*/
+    const user = {
+      id: 'userid', 
+      name: 'username'
+    }
+    const bot = {
+      id: 'botid', 
+      name: 'botname'
+    }
+    const botConnection = new DirectLine({
+      secret: this.botKey,
+      webSocket: true
+    });
 
     App({
       adaptiveCardsHostConfig: {
         fontFamily: '"Myriad Pro", sans-serif'
       },
-      directLine: {
-        secret: 'f0U4GgfLXeQ.cwA.PbA.efbJoWeP7mQyWoW-QiZuwsJVD6MDZyw9JO1BpNAa9mY', 
-        webSocket: true 
-      },
-      user: {id: 'userid', name: 'username'},
-      bot: {id: 'botid', name: 'botname'},
+      user: user,
+      bot: bot,
+      botConnection: botConnection
     }, this.botWindowElement.nativeElement);
+
+    botConnection.postActivity({ type: "event", value: "", from: user, name: "conversationUpdate" })
+                 .subscribe(x => console.log('postActivity', x));
   }
 
 }

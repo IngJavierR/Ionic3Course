@@ -47,6 +47,7 @@ import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
 import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 import { BotPage } from '../pages/bot/bot';
 import { SignaturePage } from '../pages/signature/signature';
+import { BotRetailPage } from '../pages/bot-retail/bot-retail';
 
 export const MATERIAL_COMPONENTS = [
   MatFormFieldModule,
@@ -78,7 +79,8 @@ export const MATERIAL_COMPONENTS = [
     ManageSqlPage,
     BotPage,
     ChatBotComponent,
-    SignaturePage
+    SignaturePage,
+    BotRetailPage
   ],
   imports: [
     BrowserModule,
@@ -110,7 +112,8 @@ export const MATERIAL_COMPONENTS = [
     LocalNotificationPage,
     ManageSqlPage,
     BotPage,
-    SignaturePage
+    SignaturePage,
+    BotRetailPage
   ],
   providers: [
     StatusBar,

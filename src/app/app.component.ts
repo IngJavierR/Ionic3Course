@@ -15,6 +15,7 @@ import { ManageSqlPage } from '../pages/manage-sql/manage-sql';
 import { SqlStorageProvider } from '../providers/sql-storage/sql-storage';
 import { BotPage } from '../pages/bot/bot';
 import { SignaturePage } from '../pages/signature/signature';
+import { BotRetailPage } from '../pages/bot-retail/bot-retail';
 declare var ADRUM : any;
 
 @Component({
@@ -98,6 +99,10 @@ export class MyApp {
 
   goToChatBot() {
     this.nav.push(BotPage);
+  }
+
+  goToReailChatBot() {
+    this.nav.push(BotRetailPage);
   }
 
   goToSign() {
